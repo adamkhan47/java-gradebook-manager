@@ -14,11 +14,9 @@ public class WhatIfRunner {
         // actually i think java does that automatically
         System.out.println("Now enter your *summative* grades by using the format in the example below:");
         System.out.println("Example: 100, 99, 39, 50, 100");
-        System.out.println("You can also just put in \"Z\" or \"X\" to signify if its a late or exempt assignment.");
         String arraySummativeString = scanner.nextLine();
         System.out.println("Now enter your *formative* grades by using the format in the example below:");
         System.out.println("Example: 100, 99, 39, 50, 100");
-        System.out.println("You can also just put in \"Z\" or \"X\" to signify if its a late or exempt assignment.");
         String arrayFormativeString = scanner.nextLine();
 
         Helperstuff helperClass = new Helperstuff();
@@ -28,14 +26,14 @@ public class WhatIfRunner {
         double[] summativeAwway = new double[countofCommasSummative];
         double[] formativeAwway = new double[countofCommasFormative];
 
-        for (int i = 0; i<countofCommasSummative; i++) {
-            summativeAwway[i] = Double.parseDouble(arraySummativeString.substring(0, arraySummativeString.indexOf(",")));
-            arraySummativeString = arraySummativeString.substring(arraySummativeString.indexOf(","), arraySummativeString.length());
-        }
+        String[] tempsummativeAwway = arraySummativeString.split(",");
+        String[] tempformativeAwway = arrayFormativeString.split(",");
 
-        for (int i = 0; i<countofCommasFormative; i++) {
-            formativeAwway[i] = Double.parseDouble(arrayFormativeString.substring(0, arrayFormativeString.indexOf(",")));
-            arrayFormativeString = arrayFormativeString.substring(arrayFormativeString.indexOf(","), arrayFormativeString.length());
+        for (int i = 0; i<tempsummativeAwway.length; i++) {
+            summativeAwway[i] = Double.parseDouble(tempsummativeAwway[i]);
+        }
+        for (int i = 0; i<tempformativeAwway.length; i++) {
+            formativeAwway[i] = Double.parseDouble(tempformativeAwway[i]);
         }
 
         WhatIf test = new WhatIf(courseName, summativeAwway, formativeAwway);

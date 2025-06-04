@@ -26,10 +26,10 @@ public class WhatIf {
         for (int i = 0; i<summativegrades.length; i++) {
             sumtemp = sumtemp + summativegrades[i];
         } 
-        finalGrade = (formtemp * 0.3) + (sumtemp * 0.7);
+        finalGrade = ((formtemp / formativegrades.length) * 0.3) + ((sumtemp / summativegrades.length) * 0.7);
     }
     public String toString() {
-        return ("The final grade after averaging everything in " + courseName + " is a " + finalGrade);
+        return ("The final grade after averaging everything in " + courseName + " is a " + String.format("%.2f", finalGrade));
     }
 
 }
