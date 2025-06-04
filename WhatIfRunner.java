@@ -1,6 +1,6 @@
-public class GradebookRunner {
+public class WhatIfRunner {
     public static void main(String[] args) {
-        Gradebook test = new Gradebook();
+        WhatIf test = new WhatIf();
         System.out.println("Welcome to the What if grade calculator for java.");
     }
 }

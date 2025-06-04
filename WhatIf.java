@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 
-public class Gradebook {
+public class WhatIf {
     private int finalGrade;
     private String courseName;
     private ArrayList<Integer> grades;
 
-    public Gradebook() {
+    public WhatIf() {
         finalGrade = 0;
         courseName = "";
         grades = new ArrayList<>();
     }
-    public Gradebook(String course, ArrayList<Integer> gradesList) {
+    public WhatIf(String course, ArrayList<Integer> gradesList) {
         finalGrade = 0;
         courseName = course;
         grades = gradesList;
