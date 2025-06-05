@@ -19,9 +19,8 @@ public class WhatIfRunner {
         System.out.println("Example: 100, 99, 39, 50, 100");
         String arrayFormativeString = scanner.nextLine();
 
-        Helperstuff helperClass = new Helperstuff();
-        int countofCommasSummative = helperClass.getInstancesOfLetter(arraySummativeString, ',') + 1;
-        int countofCommasFormative = helperClass.getInstancesOfLetter(arrayFormativeString, ',') + 1;
+        int countofCommasSummative = getInstancesOfLetter(arraySummativeString, ',') + 1;
+        int countofCommasFormative = getInstancesOfLetter(arrayFormativeString, ',') + 1;
 
         double[] summativeAwway = new double[countofCommasSummative];
         double[] formativeAwway = new double[countofCommasFormative];
@@ -40,5 +39,14 @@ public class WhatIfRunner {
         test.calcAverage();
         System.out.println(test);
 
+    }
+    public static int getInstancesOfLetter(String stringtocombthrough, char woah) {
+        int count = 0;
+        for (int i = 0; i<stringtocombthrough.length(); i++) {
+            if (stringtocombthrough.charAt(i) == (woah)) {
+                count++;
+            }
+        }
+        return count;
     }
 }
